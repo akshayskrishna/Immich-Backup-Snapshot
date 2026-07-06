@@ -82,7 +82,7 @@ display_banner() {
     for line in "${banner_lines[@]}"; do
         printf '%s\n' "$line"
     done
-    printf '%s\n' "   An incremental backup workflow for Immich snapshots"
+    printf '%s\n' "   A backup tool for Immich"
     printf '%s\n' "   By Akshay Krishna"
     printf '\n'
 }
