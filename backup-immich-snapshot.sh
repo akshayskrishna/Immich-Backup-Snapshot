@@ -1,37 +1,5 @@
 #!/usr/bin/env bash
-#
-# Immich backup template
-# ----------------------
-# What this script does:
-#   1. Asks which Immich Docker compose folder to use.
-#   2. Asks where the backup destination lives.
-#   3. Optionally asks for an external library path.
-#   4. Optionally installs a cron job for future runs.
-#   5. Dumps the Immich database.
-#   6. Stops the Immich compose stack briefly.
-#   7. Copies the media storage and optional external library.
-#   8. Starts Immich again even if something fails.
-#
-# Safety notes:
-#   - The backup destination must already exist.
-#   - The backup destination must be writable.
-#   - The script refuses to back up into a path that looks like the source tree.
-#   - Cron installation is optional.
-#   - The cron job re-runs this script in non-interactive mode with saved paths.
-#
-# Usage:
-#   bash backup-immich-template.sh
-#   bash backup-immich-template.sh --once --yes \
-#     --immich-dir /path/to/immich-app \
-#     --backup-dir /path/to/backups \
-#     --media-dir /path/to/immich-storage \
-#     [--external-library /path/to/external/library] \
-#     [--db-service postgres_service_name]
-#
-# Notes for cron:
-#   - Use --once so the scheduled job skips the cron-setup prompts.
-#   - Use --yes so the scheduled job skips the final confirmation prompt.
-#   - The backup destination must still exist when the cron job runs.
+# A script by Akshay Krishna
 
 set -Eeuo pipefail
 IFS=$'\n\t'

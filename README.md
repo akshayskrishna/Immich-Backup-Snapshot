@@ -1,10 +1,10 @@
 # Immich Snapshot Tool
 
-An interactive Immich Backup Tool. This tool creates the complete snapshot of the immich library, database as-a-whole backup.
+An Immich Backup Tool. This tool creates the complete snapshot of the immich library, database as-a-whole backup.
 
 This guide explains how the script works, what it asks for, and how to run it safely on your own server.
 
-If you prefer running incremental backups, then check out the sibiling repo on https://github.com/akshayskrishna/Immich-Incremental-Snapshot
+If you prefer running incremental backups, then check out the sibiling repo on [Immich Incremental Backup](https://github.com/akshayskrishna/Immich-Incremental-Snapshot)
 
 ## What this tool does
 
@@ -20,10 +20,10 @@ Immich Snapshot helps you create a consistent backup of an Immich Docker deploym
 - copies the external library (if provided)
 - automatically starts Immich again after completion (even if something fails)
 
-## Prerequisites
-
-- backup folder should be created before running the script
-- Immich service is expected to be running
+> [!IMPORTANT]
+>
+> - backup folder should be created before running the script
+> - Immich service is expected to be running while running the script.
 
 ## How it works
 
@@ -64,7 +64,7 @@ Available schedule choices:
 
 If a scheduled backup is chosen, the script asks for the missing schedule details such as:
 
-- hour of day
+- hour of day [0 - 23]
 - day of week for weekly runs
 - day of month for monthly runs
 - two days of month for twice-monthly runs
@@ -99,6 +99,12 @@ The script uses cleanup logic so Immich is started again even if a step fails.
 That is important because backups should not leave services stopped.
 
 ## Usage
+
+### Download the script
+
+```bash
+wget https://raw.githubusercontent.com/akshayskrishna/Immich-Backup-Snapshot/main/backup-immich-snapshot.sh
+```
 
 ### Interactive (recommended)
 
@@ -174,6 +180,6 @@ The ASCII branding style in this script is inspired by:
 
 ## Restore companion
 
-If you need to recover from one of these backups, use the restore helper in the sibling repo at https://github.com/akshayskrishna/Immich-Snapshot-Restore
+If you need to recover from one of these backups, use the restore helper in the sibling repo at [Immich Restore](https://github.com/akshayskrishna/Immich-Snapshot-Restore)
 
 The restore script checks the manifest written by the backup script before it restores the database or files.
