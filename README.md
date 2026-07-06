@@ -114,9 +114,7 @@ bash backup-immich-template.sh
 
 ### Incremental variant
 
-If you have a large Immich library and want to avoid re-copying unchanged data every run, use the incremental companion script
-
-This version creates a full snapshot on the first run, then uses `rsync --link-dest` so later snapshots only store new or changed files while preserving the snapshot history.
+If you have a large Immich library and want to avoid re-copying unchanged data every run, use the incremental companion script [Immich Incremental Backup](https://github.com/akshayskrishna/Immich-Incremental-Snapshot)
 
 ### One-time non-interactive run
 
